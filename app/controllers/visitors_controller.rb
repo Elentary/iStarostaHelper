@@ -103,7 +103,7 @@ int main() {
       input += xls.sheet(0).row(i).join(' ') + "\n"
     end
 
-    @seed = params[:data][:seed]
+    @seed = [0, [params[:data][:seed].to_i, 10000].min].max
     response = HTTParty.post(URL, body: {
       'client_secret': CLIENT_SECRET,
       'async':         0,
