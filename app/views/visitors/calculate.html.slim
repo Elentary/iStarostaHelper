@@ -1,0 +1,9 @@
+.alert.alert-info[role="alert"]
+  = "Random seed used for resolving possible conflicts = #{@seed}"
+.alert.alert-light[role="alert"]
+  = "We use Hungarian algorithm and search for most satisfied assignment, "
+  = link_to 'check it out', @weblink
+ul.list-group
+  - @order.each do |entry|
+    li.list-group-item
+      = entry
